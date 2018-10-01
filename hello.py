@@ -1,7 +1,8 @@
 from pptx import Presentation
 from pptx.enum.shapes import MSO_SHAPE
 from pptx.util import Inches, Pt
-
+from pptx.dml.color import RGBColor
+from pptx.enum.dml import MSO_THEME_COLOR
 prs = Presentation()
 title_only_slide_layout = prs.slide_layouts[6]
 slide = prs.slides.add_slide(title_only_slide_layout)
@@ -74,15 +75,15 @@ height = Inches(1.5)
 width = Inches(1)
 left = Inches(.5)
 top = Inches(1) 
-
+#slide 3
 for y in range(1, 4):
     left = Inches(.5)
-    for x in range(1,8):
+    for x in range(1,9):
+        fill = shape.fill
+        fill.solid()
+        fill.fore_color.rgb = RGBColor(255, 255, 255)
+
         shape = shapes.add_shape(MSO_SHAPE.RECTANGLE, left, top, width, height)
-
-        fill = shape.fill.type
-        str(fill)
-
         txBoxHeight = Inches(.25)
         txBox1 = slide3.shapes.add_textbox(left, top-Inches(.33), width, txBoxHeight)
         tf = txBox1.text_frame
@@ -106,7 +107,6 @@ for y in range(1, 4):
         p = tf.add_paragraph()
         p.text = "IPO"
         p.font.size = Pt(10)
-
         txBox2 = slide3.shapes.add_textbox(left, top+Inches(1), width, Inches(.25))
         tf = txBox2.text_frame
         p = tf.add_paragraph()
