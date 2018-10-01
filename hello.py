@@ -79,12 +79,14 @@ top = Inches(1)
 #slide 3
 for y in range(1, 4):
     left = Inches(.5)
-    for x in range(1,9):
+    for x in range(1,8):
+        shape = shapes.add_shape(MSO_SHAPE.RECTANGLE, left, top, width, height)
         fill = shape.fill
         fill.solid()
         fill.fore_color.rgb = RGBColor(255, 255, 255)
-
-        shape = shapes.add_shape(MSO_SHAPE.RECTANGLE, left, top, width, height)
+        line = shape.line
+        line.color.rgb = RGBColor(0,0,0)
+        line.width = Pt(2.5)
         txBoxHeight = Inches(.25)
         txBox1 = slide3.shapes.add_textbox(left, top-Inches(.33), width, txBoxHeight)
         tf = txBox1.text_frame
