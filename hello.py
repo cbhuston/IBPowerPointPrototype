@@ -110,11 +110,8 @@ for y in range(1, 4):
         p = tf.add_paragraph()
         p.text = "IPO"
         p.font.size = Pt(10)
-<<<<<<< HEAD
         p.alignment = PP_ALIGN.CENTER
 
-=======
->>>>>>> 2a914db5a9e75cdf6bbd8e7953a90c6af88b5bf2
         txBox2 = slide3.shapes.add_textbox(left, top+Inches(1), width, Inches(.25))
         tf = txBox2.text_frame
         p = tf.add_paragraph()
