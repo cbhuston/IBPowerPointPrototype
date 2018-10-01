@@ -31,7 +31,6 @@ const Navbar = props =>(
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
-    
   </div>
 </nav>
 )
