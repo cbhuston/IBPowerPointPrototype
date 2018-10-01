@@ -1,4 +1,5 @@
 from pptx import Presentation
+from pptx.enum.text import PP_ALIGN
 from pptx.enum.shapes import MSO_SHAPE
 from pptx.util import Inches, Pt
 
@@ -87,12 +88,13 @@ for y in range(1, 4):
         txBox1 = slide3.shapes.add_textbox(left, top-Inches(.33), width, txBoxHeight)
         tf = txBox1.text_frame
         p = tf.add_paragraph()
+        p.alignment = PP_ALIGN.CENTER
         p.text = "June 2018"
         p.font.size = Pt(10)
 
         picTop = top+Inches(.4)
-        pic = slide3.shapes.add_picture('key_social_logo.png', left+Inches(.105), picTop, height=Inches(.4))
-
+        pic = slide3.shapes.add_picture('key_social_logo.png', left, picTop, height=Inches(.4))
+        pic.alignment = PP_ALIGN.CENTER
         txBoxTop = top + Inches(1.5)
         
         txBox3 = slide3.shapes.add_textbox(left, picTop+Inches(.1), width, Inches(.25))
@@ -100,18 +102,21 @@ for y in range(1, 4):
         p = tf.add_paragraph()
         p.text = "200,000,000"
         p.font.size = Pt(10)
+        p.alignment = PP_ALIGN.CENTER
 
         txBox3 = slide3.shapes.add_textbox(left, picTop+Inches(.23), width, Inches(.25))
         tf = txBox3.text_frame
         p = tf.add_paragraph()
         p.text = "IPO"
         p.font.size = Pt(10)
+        p.alignment = PP_ALIGN.CENTER
 
         txBox2 = slide3.shapes.add_textbox(left, top+Inches(1), width, Inches(.25))
         tf = txBox2.text_frame
         p = tf.add_paragraph()
         p.text = "Bookrunner"
         p.font.size = Pt(10)
+        p.alignment = PP_ALIGN.CENTER
         left = left + width + Inches(.285)
     top = top + height + Inches(.33)
 
